@@ -1,0 +1,50 @@
+I need to rebuild a website for Sabadou Transfert, a money transfer company 
+operating in Guinea. The current site (sabadouservices.com) is outdated and 
+built on Joomla. I want to create a modern, professional website from scratch.
+
+ABOUT THE BUSINESS:
+- Service: Domestic money transfer across Guinea (person-to-person)
+- Coverage: All 33 prefectures in Guinea with 375+ physical agency locations
+- Key selling points: No bank account needed, fast transfers (minutes), 
+  transparent fees, 99% customer satisfaction
+- Target audience: Guinean diaspora sending money home + local users within Guinea
+- Languages needed: French (primary) and English
+
+TECHNICAL REQUIREMENTS:
+- Modern, responsive design (mobile-first)
+- Fast loading speed
+- Clean, professional look that builds trust
+- Need these key features:
+  1. Fee calculator (user inputs amount, sees exact transfer cost)
+  2. Agency finder (searchable/filterable list of 375+ locations)
+  3. Multi-language support (FR/EN toggle)
+  4. Blog section
+  5. Contact forms
+
+DESIGN DIRECTION:
+- Professional but warm and approachable
+- Colors: Currently uses orange/yellow branding (open to suggestions)
+- Must convey: Security, Speed, Simplicity
+- Inspiration: Modern fintech sites like Wise, Remitly, but simpler
+- Avoid: Corporate banking feel - too cold
+- Target: Trustworthy yet accessible to non-tech-savvy users
+
+CURRENT WEBSITE PROBLEMS TO AVOID:
+- Outdated Joomla template look
+- Poor typography and spacing
+- Unclear call-to-actions
+- Important features buried in navigation
+- Typos and language inconsistencies
+- No clear user flow
+
+PRIORITY PAGES TO BUILD:
+1. Homepage (most important - clear value prop, how it works, CTA)
+2. Fee Calculator page
+3. Agency Finder page
+4. About Us
+5. Contact
+
+Let's start with the HOMEPAGE. I want a modern, conversion-focused design that 
+immediately communicates what Sabadou does and why users should trust them.
+
+Can you help me create the structure and initial code for this homepage?
