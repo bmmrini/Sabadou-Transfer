@@ -7,11 +7,7 @@ import { Button } from "@/components/ui/button";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
-  const { language, setLanguage, t } = useLocale();
-
-  const toggleLang = () => {
-    setLanguage(language === 'fr' ? 'en' : 'fr');
-  };
+  const { t } = useLocale();
 
   const navLinks = [
     { href: "/", label: t('nav.home') },
@@ -27,8 +23,8 @@ export function Navbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 cursor-pointer group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 transition-transform group-hover:rotate-6">
-              <span className="text-white font-display font-bold text-xl">S</span>
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 transition-transform group-hover:rotate-6 overflow-hidden p-1">
+              <img src="/attached_assets/Sabadou_logo_(1)_1770548963109.jpg" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-display font-bold text-xl tracking-tight text-gray-900 group-hover:text-primary transition-colors">
               Sabadou<span className="text-primary">Transfert</span>
@@ -49,14 +45,6 @@ export function Navbar() {
             
             <div className="h-6 w-px bg-gray-200" />
             
-            <button 
-              onClick={toggleLang}
-              className="flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              <Globe className="w-4 h-4 mr-1" />
-              {language.toUpperCase()}
-            </button>
-            
             <Link href="/agencies">
               <Button className="font-semibold shadow-lg shadow-primary/25 hover:shadow-xl transition-all hover:-translate-y-0.5">
                 {t('hero.cta')}
@@ -66,12 +54,6 @@ export function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-             <button 
-              onClick={toggleLang}
-              className="flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-colors"
-            >
-              {language.toUpperCase()}
-            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
