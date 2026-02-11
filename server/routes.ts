@@ -117,19 +117,27 @@ async function seedDatabase() {
 
     // Seed Blog Posts
     await storage.createBlogPost({
-      slug: "launch-new-website",
-      title: "Sabadou Transfert Launches New Website",
-      excerpt: "We are proud to announce the launch of our new modern website to better serve our customers.",
-      content: "Welcome to the new Sabadou Transfert website! We have redesigned our online presence to make it easier for you to find our agencies and calculate transfer fees. Our goal is to provide transparency and speed in all your transactions. Stay tuned for more updates!",
-      coverImage: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d"
+      slug: "lancement-nouveau-site",
+      title: "Sabadou Transfert lance son nouveau site web",
+      excerpt: "Nous sommes fiers d'annoncer le lancement de notre nouveau site web moderne pour mieux servir nos clients.",
+      content: "Bienvenue sur le nouveau site web de Sabadou Transfert ! Nous avons repensé notre présence en ligne pour vous permettre de trouver plus facilement nos agences et de calculer les frais de transfert. Notre objectif est de fournir transparence et rapidité dans toutes vos transactions. Restez à l'écoute pour plus de mises à jour !",
+      coverImage: "/images/hero-transfer.jpg"
     });
 
     await storage.createBlogPost({
       slug: "expansion-kankan",
-      title: "New Agencies in Kankan Region",
-      excerpt: "Expanding our network to reach more people in Upper Guinea.",
-      content: "We are excited to open 5 new agencies in the Kankan region this month. This expansion is part of our commitment to being present in every corner of Guinea. Check our Agency Finder to see the new locations.",
-      coverImage: "https://images.unsplash.com/photo-1526304640152-d292a39d9512"
+      title: "Nouvelles agences dans la région de Kankan",
+      excerpt: "Extension de notre réseau pour toucher plus de personnes en Haute-Guinée.",
+      content: "Nous sommes ravis d'ouvrir 5 nouvelles agences dans la région de Kankan ce mois-ci. Cette expansion fait partie de notre engagement à être présent dans chaque coin de la Guinée. Consultez notre outil de recherche d'agences pour voir les nouveaux emplacements.",
+      coverImage: "/images/blog-expansion.jpg"
+    });
+
+    await storage.createBlogPost({
+      slug: "securite-transferts",
+      title: "Comment nous assurons la sécurité de vos fonds",
+      excerpt: "La sécurité est notre priorité absolue chez Sabadou Transfert.",
+      content: "Chez Sabadou, nous utilisons des technologies de pointe pour garantir que chaque franc guinéen que vous envoyez arrive en toute sécurité à sa destination. Nos protocoles de vérification rigoureux et notre réseau de confiance font de nous le leader du transfert d'argent en Guinée.",
+      coverImage: "/images/blog-trust.jpg"
     });
 
     console.log("Database seeded successfully.");

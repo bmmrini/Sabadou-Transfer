@@ -191,7 +191,7 @@ export default function Home() {
               {/* Using Unsplash image for lifestyle representation */}
               {/* Happy customer using phone for financial transaction */}
               <img 
-                src="https://pixabay.com/get/gb724789e83f14c6acd6d967b92de3092a5674276e72e78569d720353dbf7596ab052118a346385a7397b4810aedb85272c37c923fb632d90ed3d9fbd5f172afd_1280.jpg" 
+                src="/images/blog-trust.jpg" 
                 alt="Client satisfait" 
                 className="relative z-10 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
               />
