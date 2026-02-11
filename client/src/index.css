@@ -5,38 +5,38 @@
 @tailwind utilities;
 
 :root {
-  /* HSL Color Space */
-  /* Primary: Blue from logo (#1D70B8) */
-  --primary: 208 73% 42%; 
+  /* HSL Color Space - Updated from Sabadou official palette */
+  /* Primary: Bleu Royal (#1A3FA6) */
+  --primary: 224 73% 38%; 
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Teal from logo (#28A197) */
-  --secondary: 175 60% 39%; 
+  /* Secondary: Teal (#1A9A8A) */
+  --secondary: 173 71% 35%; 
   --secondary-foreground: 0 0% 100%;
 
   /* Backgrounds */
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --foreground: 218 25% 24%; /* Gris Texte #2E3A4E */
   
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 220 33% 97%; /* Gris Clair #F4F6FA */
+  --muted-foreground: 218 25% 24%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --popover-foreground: 218 25% 24%;
   
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 218 25% 24%;
   
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
+  --border: 220 33% 94%;
+  --input: 220 33% 94%;
   
-  --accent: 208 73% 96%; /* Light blue tint */
-  --accent-foreground: 208 73% 42%;
+  --accent: 224 73% 96%;
+  --accent-foreground: 224 73% 38%;
   
   --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 0 0% 100%;
 
-  --ring: 208 73% 42%;
+  --ring: 224 73% 38%;
   --radius: 0.75rem;
 
   --font-sans: 'DM Sans', sans-serif;
@@ -44,27 +44,27 @@
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+  --background: 224 70% 15%; /* Bleu Indigo Profond #1E2A7A variant */
+  --foreground: 220 33% 97%;
   
-  --primary: 208 73% 42%;
-  --primary-foreground: 210 40% 98%;
+  --primary: 224 73% 38%;
+  --primary-foreground: 0 0% 100%;
   
-  --secondary: 175 60% 39%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 173 71% 35%;
+  --secondary-foreground: 0 0% 100%;
   
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 224 70% 20%;
+  --muted-foreground: 220 33% 80%;
   
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 224 70% 20%;
+  --accent-foreground: 220 33% 97%;
   
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 220 33% 97%;
   
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 208 73% 42%;
+  --border: 224 70% 20%;
+  --input: 224 70% 20%;
+  --ring: 224 73% 38%;
 }
 
 @layer base {
