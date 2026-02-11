@@ -29,10 +29,10 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary to-orange-600 pt-16 pb-32 md:pt-24 md:pb-48 overflow-hidden">
+      <section className="relative bg-[#F4F6FA] pt-16 pb-32 md:pt-24 md:pb-48 overflow-hidden">
         {/* Background Patterns */}
-        <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-secondary/30 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-dot-pattern opacity-5"></div>
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,29 +43,29 @@ export default function Home() {
               variants={container}
               initial="hidden"
               animate="show"
-              className="flex-1 text-center lg:text-left text-white"
+              className="flex-1 text-center lg:text-left"
             >
-              <motion.div variants={item} className="inline-flex items-center space-x-2 bg-white/10 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm border border-white/20">
+              <motion.div variants={item} className="inline-flex items-center space-x-2 bg-primary/5 rounded-full px-4 py-1.5 mb-6 border border-primary/10">
                 <span className="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
-                <span className="text-sm font-medium text-white/90">Disponible 24/7 partout en Guinée</span>
+                <span className="text-sm font-medium text-primary">Disponible 24/7 partout en Guinée</span>
               </motion.div>
               
-              <motion.h1 variants={item} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
+              <motion.h1 variants={item} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 text-[#1E2A7A]">
                 {t('hero.title')}
               </motion.h1>
               
-              <motion.p variants={item} className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <motion.p variants={item} className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 {t('hero.subtitle')}
               </motion.p>
               
               <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                 <Link href="/agencies">
-                  <Button size="lg" className="h-14 px-8 rounded-xl bg-white text-primary hover:bg-white/90 text-lg font-bold shadow-xl shadow-black/10 w-full sm:w-auto">
+                  <Button size="lg" className="h-14 px-8 rounded-xl bg-primary text-white hover:bg-primary/90 text-lg font-bold shadow-xl shadow-primary/20 w-full sm:w-auto">
                     {t('hero.cta')}
                   </Button>
                 </Link>
                 <Link href="/fees">
-                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-xl bg-transparent border-2 border-white/30 text-white hover:bg-white/10 hover:text-white text-lg font-semibold w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="h-14 px-8 rounded-xl border-2 border-primary/20 text-primary hover:bg-primary/5 text-lg font-semibold w-full sm:w-auto">
                     Voir les tarifs
                   </Button>
                 </Link>
@@ -79,9 +79,9 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="flex-1 w-full max-w-md lg:max-w-lg"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-2 border border-white/20 shadow-2xl">
+              <div className="bg-white rounded-3xl p-2 border border-gray-100 shadow-2xl">
                 <div className="bg-white rounded-2xl p-6 md:p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 font-display">Simulateur Rapide</h3>
+                  <h3 className="text-2xl font-bold text-[#1E2A7A] mb-2 font-display">Simulateur Rapide</h3>
                   <p className="text-gray-500 mb-6 text-sm">Combien voulez-vous envoyer ?</p>
                   <FeeCalculator variant="card" />
                 </div>
