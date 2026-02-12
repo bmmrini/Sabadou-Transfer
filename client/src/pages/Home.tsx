@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
+import Gemini_Generated_Image_dfvcyjdfvcyjdfvc from "@assets/Gemini_Generated_Image_dfvcyjdfvcyjdfvc.webp";
+
 // Animation variants
 const container = {
   hidden: { opacity: 0 },
@@ -27,7 +29,6 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
       <Navbar />
-      
       {/* Hero Section */}
       <section className="relative bg-[#F4F6FA] pt-16 pb-32 md:pt-24 md:pb-48 overflow-hidden">
         {/* Background Patterns */}
@@ -91,7 +92,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Stats/Trust Section */}
       <section className="py-12 bg-white -mt-20 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,7 +115,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Features Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -151,7 +150,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* How it works */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -191,7 +189,7 @@ export default function Home() {
               {/* Using Unsplash image for lifestyle representation */}
               {/* Happy customer using phone for financial transaction */}
               <img 
-                src="/images/blog-trust.jpg" 
+                src={Gemini_Generated_Image_dfvcyjdfvcyjdfvc} 
                 alt="Client satisfait" 
                 className="relative z-10 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"
               />
@@ -199,7 +197,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-12 opacity-5">
@@ -224,7 +221,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
