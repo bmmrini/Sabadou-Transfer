@@ -30,42 +30,42 @@ export default function Blog() {
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts?.map((post) => (
-              <article key={post.id} className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  {post.coverImage ? (
-                    <img 
-                      src={post.coverImage} 
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-400">
-                      Pas d'image
-                    </div>
-                  )}
-                </div>
-                
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center text-xs text-gray-500 mb-3">
-                    <Calendar className="w-4 h-4 mr-1" />
-                    {post.publishedAt && format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: fr })}
+              <Link key={post.id} href={`/blog/${post.slug}`}>
+                <article className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer group">
+                  <div className="h-48 bg-gray-200 relative overflow-hidden">
+                    {post.coverImage ? (
+                      <img 
+                        src={post.coverImage} 
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-400">
+                        Pas d'image
+                      </div>
+                    )}
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 font-display line-clamp-2">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 line-clamp-3 text-sm flex-1">
-                    {post.excerpt}
-                  </p>
-                  
-                  <Link href={`/blog/${post.slug}`}>
-                    <span className="inline-flex items-center text-primary font-bold text-sm hover:underline cursor-pointer">
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex items-center text-xs text-gray-500 mb-3">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {post.publishedAt && format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: fr })}
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 font-display line-clamp-2 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-6 line-clamp-3 text-sm flex-1">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="inline-flex items-center text-primary font-bold text-sm hover:underline">
                       Lire la suite <ArrowRight className="w-4 h-4 ml-1" />
-                    </span>
-                  </Link>
-                </div>
-              </article>
+                    </div>
+                  </div>
+                </article>
+              </Link>
             ))}
 
             {/* Placeholder posts if empty for MVP visual */}

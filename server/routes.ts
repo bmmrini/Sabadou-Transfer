@@ -121,7 +121,7 @@ async function seedDatabase() {
       title: "Sabadou Transfert lance son nouveau site web",
       excerpt: "Nous sommes fiers d'annoncer le lancement de notre nouveau site web moderne pour mieux servir nos clients.",
       content: "Bienvenue sur le nouveau site web de Sabadou Transfert ! Nous avons repensé notre présence en ligne pour vous permettre de trouver plus facilement nos agences et de calculer les frais de transfert. Notre objectif est de fournir transparence et rapidité dans toutes vos transactions. Restez à l'écoute pour plus de mises à jour !",
-      coverImage: "/images/hero-transfer.jpg"
+      coverImage: "/images/agency-interior.jpg"
     });
 
     await storage.createBlogPost({
@@ -138,6 +138,22 @@ async function seedDatabase() {
       excerpt: "La sécurité est notre priorité absolue chez Sabadou Transfert.",
       content: "Chez Sabadou, nous utilisons des technologies de pointe pour garantir que chaque franc guinéen que vous envoyez arrive en toute sécurité à sa destination. Nos protocoles de vérification rigoureux et notre réseau de confiance font de nous le leader du transfert d'argent en Guinée.",
       coverImage: "/images/blog-trust.jpg"
+    });
+
+    await storage.createBlogPost({
+      slug: "conseils-financiers",
+      title: "Conseils pour bien gérer vos envois d'argent",
+      excerpt: "Apprenez à optimiser vos transferts et à économiser sur les frais.",
+      content: "Gérer ses finances est crucial. Chez Sabadou, nous vous conseillons de regrouper vos envois pour bénéficier de nos tarifs dégressifs. Utilisez toujours notre simulateur en ligne avant de vous rendre en agence pour prévoir exactement le montant nécessaire.",
+      coverImage: "/images/entrepreneur-mobile.jpg"
+    });
+
+    await storage.createBlogPost({
+      slug: "temoignage-client",
+      title: "Le témoignage de nos clients satisfaits",
+      excerpt: "Découvrez pourquoi des milliers de Guinéens nous font confiance chaque jour.",
+      content: "La satisfaction client est au cœur de notre métier. De Conakry à N'Zérékoré, nos clients apprécient la rapidité de nos services et l'accueil chaleureux dans nos agences. 'Avec Sabadou, ma famille reçoit l'argent en quelques minutes, c'est vraiment rassurant', nous confie un client fidèle.",
+      coverImage: "/images/family-news.jpg"
     });
 
     console.log("Database seeded successfully.");
