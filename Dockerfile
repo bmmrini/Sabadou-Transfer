@@ -19,6 +19,9 @@ RUN npm run build
 # Production stage
 FROM node:20-alpine
 
+# Install PostgreSQL client for database readiness check
+RUN apk add --no-cache postgresql-client
+
 WORKDIR /app
 
 # Copy package files
@@ -36,19 +39,15 @@ COPY drizzle.config.ts ./
 # Copy server folder for schema
 COPY server ./server
 
+# Copy startup script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 # Expose port
 EXPOSE 5000
 
 # Set environment to production
 ENV NODE_ENV=production
-
-# Create startup script that runs migrations then starts the app
-RUN echo '#!/bin/sh' > /app/start.sh && \
-    echo 'echo "Running database migrations..."' >> /app/start.sh && \
-    echo 'npm run db:push || echo "Migration failed, continuing..."' >> /app/start.sh && \
-    echo 'echo "Starting application..."' >> /app/start.sh && \
-    echo 'node dist/index.cjs' >> /app/start.sh && \
-    chmod +x /app/start.sh
 
 # Start the application with migrations
 CMD ["/app/start.sh"]
