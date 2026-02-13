@@ -39,6 +39,9 @@ COPY drizzle.config.ts ./
 # Copy server folder for schema
 COPY server ./server
 
+# Copy shared folder for schema
+COPY shared ./shared
+
 # Copy startup script
 COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
