@@ -9,7 +9,12 @@ import Agencies from "@/pages/Agencies";
 import Fees from "@/pages/Fees";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import About from "@/pages/About";
 import Contact from "@/pages/Contact";
+import LegalNotice from "@/pages/LegalNotice";
+import TermsOfService from "@/pages/TermsOfService";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Security from "@/pages/Security";
 
 function Router() {
   return (
@@ -19,7 +24,12 @@ function Router() {
       <Route path="/fees" component={Fees} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/legal-notice" component={LegalNotice} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/security" component={Security} />
       <Route component={NotFound} />
     </Switch>
   );

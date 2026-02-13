@@ -7,12 +7,13 @@ export default function Fees() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
-      
-      <div className="bg-primary text-white py-16 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-dot-pattern opacity-10"></div>
+
+      <div className="page-header-soft py-16 text-center relative overflow-hidden">
+        <div className="absolute inset-0 page-header-soft-overlay"></div>
+        <div className="absolute inset-0 bg-dot-pattern opacity-5"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">Tarifs & Frais</h1>
-          <p className="text-xl opacity-90">Transparence totale. Pas de frais cachés.</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display text-gray-900">Tarifs & Frais</h1>
+          <p className="text-xl text-gray-600">Transparence totale. Pas de frais cachés.</p>
         </div>
       </div>
 
@@ -21,14 +22,14 @@ export default function Fees() {
           {/* Calculator Column */}
           <div>
             <FeeCalculator variant="card" />
-            
+
             <div className="mt-8 bg-blue-50 p-6 rounded-2xl border border-blue-100">
               <h4 className="font-bold text-blue-900 mb-2 flex items-center">
                 <CheckCircle2 className="w-5 h-5 mr-2 text-blue-600" />
                 Le saviez-vous ?
               </h4>
               <p className="text-blue-800 text-sm leading-relaxed">
-                Nos frais sont parmi les plus compétitifs du marché guinéen. 
+                Nos frais sont parmi les plus compétitifs du marché guinéen.
                 De plus, l'envoi est gratuit pour tout montant inférieur à 50,000 GNF.
               </p>
             </div>
@@ -67,11 +68,11 @@ export default function Fees() {
                     <td className="px-6 py-4">100,001 - 500,000</td>
                     <td className="px-6 py-4 font-medium text-primary">5,000</td>
                   </tr>
-                   <tr className="hover:bg-gray-50/50">
+                  <tr className="hover:bg-gray-50/50">
                     <td className="px-6 py-4">500,001 - 1,000,000</td>
                     <td className="px-6 py-4 font-medium text-primary">10,000</td>
                   </tr>
-                   <tr className="hover:bg-gray-50/50">
+                  <tr className="hover:bg-gray-50/50">
                     <td className="px-6 py-4">1,000,001 - 5,000,000</td>
                     <td className="px-6 py-4 font-medium text-primary">1% du montant</td>
                   </tr>

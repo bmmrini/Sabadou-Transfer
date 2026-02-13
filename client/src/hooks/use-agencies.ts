@@ -1,34 +1,58 @@
 import { useQuery } from "@tanstack/react-query";
-import { api, buildUrl } from "@shared/routes";
+import { AGENCIES_DATA, Agency } from "@/data/agencies-data";
+
+// Compatibility interface to match what the component expects
+// It seems the component expects `address` and `city`
+interface AgencyView extends Agency {
+  address: string;
+  city: string;
+}
 
 export function useAgencies(filters?: { search?: string; prefecture?: string }) {
   return useQuery({
-    queryKey: [api.agencies.list.path, filters],
+    queryKey: ["agencies", filters],
     queryFn: async () => {
-      let url = api.agencies.list.path;
-      if (filters) {
-        const params = new URLSearchParams();
-        if (filters.search) params.append("search", filters.search);
-        if (filters.prefecture) params.append("prefecture", filters.prefecture);
-        url += `?${params.toString()}`;
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 300));
+
+      let data = AGENCIES_DATA.map(a => ({
+        ...a,
+        address: a.location || a.prefecture, // Fallback location
+        city: a.prefecture
+      }));
+
+      if (filters?.prefecture && filters.prefecture !== "all") {
+        data = data.filter(a =>
+          a.prefecture.toLowerCase() === filters.prefecture!.toLowerCase()
+        );
       }
-      
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Failed to fetch agencies");
-      return api.agencies.list.responses[200].parse(await res.json());
+
+      if (filters?.search) {
+        const searchLower = filters.search.toLowerCase();
+        data = data.filter(a =>
+          a.name.toLowerCase().includes(searchLower) ||
+          a.location.toLowerCase().includes(searchLower) ||
+          a.prefecture.toLowerCase().includes(searchLower)
+        );
+      }
+
+      return data;
     },
   });
 }
 
 export function useAgency(id: number) {
   return useQuery({
-    queryKey: [api.agencies.get.path, id],
+    queryKey: ["agency", id],
     queryFn: async () => {
-      const url = buildUrl(api.agencies.get.path, { id });
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error("Failed to fetch agency");
-      return api.agencies.get.responses[200].parse(await res.json());
+      await new Promise(resolve => setTimeout(resolve, 300));
+      const agency = AGENCIES_DATA.find(a => a.id === id);
+      if (!agency) return null;
+      return {
+        ...agency,
+        address: agency.location,
+        city: agency.prefecture
+      };
     },
   });
 }

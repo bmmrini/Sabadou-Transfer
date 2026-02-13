@@ -42,26 +42,29 @@ export default function BlogPost() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      
+
       <article className="flex-1">
         {/* Header */}
-        <div className="bg-gray-50 py-12 md:py-20 border-b border-gray-100">
-          <div className="max-w-4xl mx-auto px-4">
+        {/* Header */}
+        <div className="page-header-soft py-12 md:py-20 border-b border-gray-200 relative overflow-hidden">
+          <div className="absolute inset-0 page-header-soft-overlay"></div>
+          <div className="absolute inset-0 bg-dot-pattern opacity-5"></div>
+          <div className="max-w-4xl mx-auto px-4 relative z-10">
             <Link href="/blog">
-              <a className="inline-flex items-center text-sm text-gray-500 hover:text-primary mb-8 transition-colors">
+              <a className="inline-flex items-center text-sm text-gray-600 hover:text-primary mb-8 transition-colors">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Retour au blog
               </a>
             </Link>
-            
-            <div className="flex items-center text-sm text-primary font-medium mb-4">
+
+            <div className="flex items-center text-sm text-gray-500 font-medium mb-4">
               <Calendar className="w-4 h-4 mr-2" />
               {post.publishedAt && format(new Date(post.publishedAt), 'dd MMMM yyyy', { locale: fr })}
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight font-display mb-6">
               {post.title}
             </h1>
-            
+
             <p className="text-xl text-gray-600 leading-relaxed">
               {post.excerpt}
             </p>
@@ -72,8 +75,8 @@ export default function BlogPost() {
         {post.coverImage && (
           <div className="max-w-5xl mx-auto px-4 -mt-8 md:-mt-12 mb-12">
             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/20">
-              <img 
-                src={post.coverImage} 
+              <img
+                src={post.coverImage}
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
@@ -90,7 +93,7 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-      
+
       <Footer />
     </div>
   );

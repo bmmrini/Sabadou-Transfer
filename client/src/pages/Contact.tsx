@@ -12,7 +12,7 @@ import { Phone, Mail, MapPin, Clock, Send, Loader2 } from "lucide-react";
 
 export default function Contact() {
   const { mutate, isPending } = useSubmitContact();
-  
+
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
     defaultValues: {
@@ -33,22 +33,27 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      
+
+      <div className="page-header-soft py-16 text-center relative overflow-hidden">
+        <div className="absolute inset-0 page-header-soft-overlay"></div>
+        <div className="absolute inset-0 bg-dot-pattern opacity-5"></div>
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display text-gray-900">Contactez-nous</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Notre équipe est disponible pour répondre à toutes vos questions.
+          </p>
+        </div>
+      </div>
+
       <div className="bg-gray-50 py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4 font-display">Contactez-nous</h1>
-            <p className="text-lg text-gray-600">
-              Notre équipe est disponible pour répondre à toutes vos questions.
-            </p>
-          </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Info */}
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 font-display">Coordonnées</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary shrink-0 mt-1">
@@ -57,8 +62,8 @@ export default function Contact() {
                     <div className="ml-4">
                       <h4 className="font-bold text-gray-900">Siège Social</h4>
                       <p className="text-gray-600 text-sm mt-1">
-                        Immeuble Sabadou, Almamya<br />
-                        Kaloum, Conakry<br />
+                        Marché Sogbè immeuble bourlaye Nabé<br />
+                        Kankan<br />
                         République de Guinée
                       </p>
                     </div>
@@ -70,10 +75,10 @@ export default function Contact() {
                     </div>
                     <div className="ml-4">
                       <h4 className="font-bold text-gray-900">Téléphone</h4>
-                      <p className="text-gray-600 text-sm mt-1">
-                        +224 660 00 00 00<br />
-                        +224 620 00 00 00
-                      </p>
+                      <div className="text-gray-600 text-sm mt-1 space-y-1">
+                        <a href="tel:+224620595983" className="block hover:text-primary transition-colors">+224 620 59 59 83</a>
+                        <a href="tel:+224612710861" className="block hover:text-primary transition-colors">+224 612 71 08 61</a>
+                      </div>
                     </div>
                   </div>
 
@@ -83,10 +88,9 @@ export default function Contact() {
                     </div>
                     <div className="ml-4">
                       <h4 className="font-bold text-gray-900">Email</h4>
-                      <p className="text-gray-600 text-sm mt-1">
-                        contact@sabadoutransfert.com<br />
-                        support@sabadoutransfert.com
-                      </p>
+                      <a href="mailto:central@sabadouservices.com" className="text-gray-600 text-sm mt-1 block hover:text-primary transition-colors">
+                        central@sabadouservices.com
+                      </a>
                     </div>
                   </div>
 
@@ -110,7 +114,7 @@ export default function Contact() {
             <div className="lg:col-span-2">
               <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 font-display">Envoyez-nous un message</h3>
-                
+
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
@@ -199,7 +203,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

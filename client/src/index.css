@@ -7,34 +7,37 @@
 :root {
   /* HSL Color Space - Updated from Sabadou official palette */
   /* Primary: Teal/Green from user request (#1A9A8A) */
-  --primary: 173 71% 35%; 
+  --primary: 173 71% 35%;
   --primary-foreground: 0 0% 100%;
 
   /* Secondary: Bleu Royal (#1A3FA6) */
-  --secondary: 224 73% 38%; 
+  --secondary: 224 73% 38%;
   --secondary-foreground: 0 0% 100%;
 
   /* Backgrounds */
   --background: 0 0% 100%;
-  --foreground: 218 25% 24%; /* Gris Texte #2E3A4E */
-  
-  --muted: 220 33% 97%; /* Gris Clair #F4F6FA */
+  --foreground: 218 25% 24%;
+  /* Gris Texte #2E3A4E */
+
+  --muted: 220 33% 97%;
+  /* Gris Clair #F4F6FA */
   --muted-foreground: 218 25% 24%;
-  
+
   --popover: 0 0% 100%;
   --popover-foreground: 218 25% 24%;
-  
+
   --card: 0 0% 100%;
   --card-foreground: 218 25% 24%;
-  
+
   --border: 220 33% 94%;
   --input: 220 33% 94%;
-  
+
   --accent: 224 73% 96%;
   --accent-foreground: 224 73% 38%;
-  
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 0 0% 100%;
+
+  --primary-border: 173 71% 30%;
+  --secondary-border: 224 73% 33%;
+  --button-outline: 218 25% 24% / 0.1;
 
   --ring: 224 73% 38%;
   --radius: 0.75rem;
@@ -44,24 +47,29 @@
 }
 
 .dark {
-  --background: 224 70% 15%; /* Bleu Indigo Profond #1E2A7A variant */
+  --background: 224 70% 15%;
+  /* Bleu Indigo Profond #1E2A7A variant */
   --foreground: 220 33% 97%;
-  
+
   --primary: 224 73% 38%;
   --primary-foreground: 0 0% 100%;
-  
+
   --secondary: 173 71% 35%;
   --secondary-foreground: 0 0% 100%;
-  
+
+  --primary-border: 224 73% 33%;
+  --secondary-border: 173 71% 30%;
+  --button-outline: 220 33% 97% / 0.2;
+
   --muted: 224 70% 20%;
   --muted-foreground: 220 33% 80%;
-  
+
   --accent: 224 70% 20%;
   --accent-foreground: 220 33% 97%;
-  
+
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 220 33% 97%;
-  
+
   --border: 224 70% 20%;
   --input: 224 70% 20%;
   --ring: 224 73% 38%;
@@ -71,11 +79,18 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     @apply tracking-tight;
   }
@@ -89,4 +104,71 @@
 .bg-dot-pattern {
   background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes float-delayed {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite;
+}
+
+/* Soft Page Header - Elegant gradient for page titles */
+.page-header-soft {
+  background: linear-gradient(135deg, 
+    hsl(210, 45%, 96%) 0%,
+    hsl(200, 50%, 94%) 50%,
+    hsl(190, 45%, 92%) 100%
+  );
+  color: hsl(218, 25%, 24%);
+}
+
+.page-header-soft-overlay {
+  background: linear-gradient(135deg,
+    rgba(26, 154, 138, 0.03) 0%,
+    rgba(26, 63, 166, 0.05) 100%
+  );
 }

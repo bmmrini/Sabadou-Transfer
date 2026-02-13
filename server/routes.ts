@@ -67,17 +67,23 @@ export async function registerRoutes(
     }
   });
 
-  // Seed Data function
+  // Seed Data function - only if database is available
   await seedDatabase();
 
   return httpServer;
 }
 
 async function seedDatabase() {
+  // Skip seeding if no database connection
+  if (!storage.isDbAvailable()) {
+    console.log("Skipping database seeding - no database connection");
+    return;
+  }
+
   const existingAgencies = await storage.getAgencies();
   if (existingAgencies.length === 0) {
     console.log("Seeding database...");
-    
+
     // Seed Agencies (Sample of the 375+)
     const sampleAgencies = [
       { name: "Agence Principale Madina", prefecture: "Conakry", city: "Conakry", address: "Marche Madina, Avaria", phone: "620 00 00 01", isHq: true },

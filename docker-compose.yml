@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: sabadou-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sabadou_transfert
+      POSTGRES_USER: sabadou_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sabadou-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sabadou_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sabadou-app
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DATABASE_URL: postgresql://sabadou_user:${DB_PASSWORD}@postgres:5432/sabadou_transfert
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sabadou-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  sabadou-network:
+    driver: bridge
