@@ -29,6 +29,10 @@ fi
 # Charger les variables d'environnement
 export $(cat .env.production | grep -v '^#' | xargs)
 
+# Copier .env.production vers .env pour Docker Compose
+echo "📝 Configuration des variables d'environnement..."
+cp .env.production .env
+
 echo "📦 Arrêt des containers existants..."
 docker-compose down
 
