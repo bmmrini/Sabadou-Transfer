@@ -11,7 +11,7 @@ interface SEOProps {
 export function SEO({
     title = "Sabadou Transfert - Transfert d'argent rapide et sécurisé en Guinée",
     description = "Le moyen le plus simple, rapide et sécurisé pour envoyer de l'argent partout en Guinée. Plus de 375 agences à votre service.",
-    image = "/images/og-image.jpg",
+    image = "/og-image.png",
     type = "website"
 }: SEOProps) {
     const [location] = useLocation();
