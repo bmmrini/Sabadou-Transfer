@@ -31,9 +31,9 @@ export function Footer() {
             <h3 className="text-foreground font-bold mb-4 font-display">Navigation</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link href="/"><a className="hover:text-primary transition-colors">Accueil</a></Link></li>
-              <li><Link href="/about"><a className="hover:text-primary transition-colors">À Propos</a></Link></li>
-              <li><Link href="/fees"><a className="hover:text-primary transition-colors">Calculer les frais</a></Link></li>
-              <li><Link href="/agencies"><a className="hover:text-primary transition-colors">Nos Agences</a></Link></li>
+              <li><Link href="/a-propos"><a className="hover:text-primary transition-colors">À Propos</a></Link></li>
+              <li><Link href="/tarifs"><a className="hover:text-primary transition-colors">Calculer les frais</a></Link></li>
+              <li><Link href="/agences"><a className="hover:text-primary transition-colors">Nos Agences</a></Link></li>
               <li><Link href="/blog"><a className="hover:text-primary transition-colors">Blog & Actualités</a></Link></li>
             </ul>
           </div>
@@ -42,10 +42,10 @@ export function Footer() {
           <div>
             <h3 className="text-foreground font-bold mb-4 font-display">Légal</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><Link href="/terms-of-service"><a className="hover:text-primary transition-colors">Conditions d'utilisation</a></Link></li>
-              <li><Link href="/privacy-policy"><a className="hover:text-primary transition-colors">Politique de confidentialité</a></Link></li>
-              <li><Link href="/legal-notice"><a className="hover:text-primary transition-colors">Mentions légales</a></Link></li>
-              <li><Link href="/security"><a className="hover:text-primary transition-colors">Sécurité</a></Link></li>
+              <li><Link href="/conditions-generales"><a className="hover:text-primary transition-colors">Conditions d'utilisation</a></Link></li>
+              <li><Link href="/politique-confidentialite"><a className="hover:text-primary transition-colors">Politique de confidentialité</a></Link></li>
+              <li><Link href="/mentions-legales"><a className="hover:text-primary transition-colors">Mentions légales</a></Link></li>
+              <li><Link href="/securite"><a className="hover:text-primary transition-colors">Sécurité</a></Link></li>
             </ul>
           </div>
 

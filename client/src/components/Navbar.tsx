@@ -11,9 +11,9 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: t('nav.home') },
-    { href: "/fees", label: t('nav.calculate') },
-    { href: "/agencies", label: t('nav.find_agency') },
-    { href: "/about", label: "À Propos" },
+    { href: "/tarifs", label: t('nav.calculate') },
+    { href: "/agences", label: t('nav.find_agency') },
+    { href: "/a-propos", label: "À Propos" },
     { href: "/blog", label: t('nav.blog') },
     { href: "/contact", label: t('nav.contact') },
   ];

@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { HelmetProvider } from "react-helmet-async";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Agencies from "@/pages/Agencies";
@@ -20,16 +21,16 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/agencies" component={Agencies} />
-      <Route path="/fees" component={Fees} />
+      <Route path="/agences" component={Agencies} />
+      <Route path="/tarifs" component={Fees} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
-      <Route path="/about" component={About} />
+      <Route path="/a-propos" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/legal-notice" component={LegalNotice} />
-      <Route path="/terms-of-service" component={TermsOfService} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
-      <Route path="/security" component={Security} />
+      <Route path="/mentions-legales" component={LegalNotice} />
+      <Route path="/conditions-generales" component={TermsOfService} />
+      <Route path="/politique-confidentialite" component={PrivacyPolicy} />
+      <Route path="/securite" component={Security} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -37,12 +38,14 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Router />
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Router />
+          <Toaster />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }
 
