@@ -77,12 +77,12 @@ export default function Home() {
 
               <motion.div variants={item} className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                 <Button asChild size="lg" className="w-full sm:w-auto uppercase tracking-wide">
-                  <Link href="/agencies">
+                  <Link href="/agences">
                     {t('hero.cta')}
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-                  <Link href="/fees">
+                  <Link href="/tarifs">
                     Voir les tarifs
                   </Link>
                 </Button>
@@ -371,7 +371,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="w-full sm:w-auto uppercase tracking-wide">
-              <Link href="/agencies">
+              <Link href="/agences">
                 Trouver une agence
               </Link>
             </Button>
